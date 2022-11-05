@@ -1,117 +1,167 @@
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap");
 
 .container {
-    background-color: white;
-    height: 100vh;
-    width: 100vw;
-    display: grid;
-    place-items: center;
-    background-size: cover;
-    background-image: url('../assets/images/b.jpg');
-
+  background-color: white;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-image: url("../assets/images/b.jpg");
 }
 
 .bookContainer {
-    height: 97vh;
-    width: 70vw;
-    position: relative;
-    background-image: url('../assets/images/c.png');
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    display: flex !important;
-    flex-direction: row !important;
-    align-items: center;
-    z-index: 11 !important;
+  height: 97vh;
+  width: 70vw;
+  position: relative;
+  background-image: url("../assets/images/c.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center;
+  z-index: 11 !important;
 }
 
-.page1 {
-    background-color: transparent;
-    height: 90% !important;
-    padding: 10px 5px;
-    margin-left: 60px;
-    width: 45%;
-    font-family: 'Work Sans', sans-serif;
+/* .page1 {
+  padding: 10px 5px;
+  margin-left: 60px;
+  width: 45% !important;
+} */
+
+.bookCard {
+  background-color: transparent;
+  height: 90%;
+  width: 48%;
+  font-family: "Work Sans", sans-serif;
+  perspective: 1000px;
 }
 
-.page2 {
-    background-color: transparent;
-    height: 90%;
-    width: 48%;
-    font-family: 'Work Sans', sans-serif;
+.bookCardInner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.bookFront,
+.bookBack {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+.bookBack {
+  transform: rotateY(180deg);
+}
+
+.showNext {
+  transform: rotateY(-180deg) !important;
 }
 
 .paragraph {
-    font-family: 'Caveat', cursive !important;
-    font-size: 28px;
-    font-weight: 600;
-    padding: 0px 15px 30px 15px;
+  font-family: "Caveat", cursive !important;
+  font-size: 28px;
+  font-weight: 600;
+  padding: 0px 4pc 30px;
+  width: 85%;
 }
 
-
 .TopRowcontainer {
-    position: absolute;
-    top: -40px;
-    left: 0px;
-    height: 70px;
-    width: 100vw;
-    transition: ease-in-out all 0.5s;
-    background-color: transparent;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1500;
+  position: absolute;
+  top: -40px;
+  left: 0px;
+  height: 70px;
+  width: 100vw;
+  transition: ease-in-out all 0.5s;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1500;
 }
 
 .heading {
-    font-size: 27px;
-    font-weight: 900;
-    visibility: hidden;
-    transition: ease-in-out all 0.1s;
+  font-size: 27px;
+  font-weight: 900;
+  visibility: hidden;
+  transition: ease-in-out all 0.1s;
 }
 
 .closeButton {
-    position: absolute;
-    top: 7px;
-    right: 40px;
-    padding: 10px 20px 15px 20px;
-    font-size: 25px;
-    color: white;
-    font-weight: 900;
-    border-radius: 50px;
-    z-index: 1600 !important;
-    background-color: orange;
+  position: absolute;
+  top: 7px;
+  right: 40px;
+  padding: 10px 20px 15px 20px;
+  font-size: 25px;
+  color: white;
+  font-weight: 900;
+  border-radius: 50px;
+  z-index: 1600 !important;
+  background-color: orange;
 }
 
-
 .PlayButton {
-    position: absolute;
-    top: 7px;
-    outline: none;
-    border: none;
-    left: 40px;
-    display: grid;
-    place-items: center;
-    padding: 20px;
-    font-size: 15px;
-    border-radius: 50px;
-    z-index: 1600 !important;
-    background-color: orange;
+  position: absolute;
+  top: 7px;
+  outline: none;
+  border: none;
+  left: 40px;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  font-size: 15px;
+  border-radius: 50px;
+  z-index: 1600 !important;
+  background-color: orange;
 }
 
 .buttonIcon {
-    height: 20px;
-    width: 20px;
+  height: 20px;
+  width: 20px;
 }
 
 .TopRowcontainer:hover {
-    transition: ease-in-out all 0.5s;
-    background-color: orange;
-    position: absolute;
-    top: 0px;
+  transition: ease-in-out all 0.5s;
+  background-color: orange;
+  position: absolute;
+  top: 0px;
 }
 
-
 .TopRowcontainer:hover .heading {
-    transition: ease-in-out all 1s;
-    visibility: visible
+  transition: ease-in-out all 1s;
+  visibility: visible;
+}
+
+.bookPrev,
+.bookNext {
+  position: absolute;
+  top: 50%;
+  height: 50px;
+  width: 50px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 33px;
+  font-weight: 500;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.bookPrev span,
+.bookNext span {
+  height: 52px;
+}
+
+.bookPrev {
+  left: 0;
+}
+
+.bookNext {
+  right: 0;
 }
