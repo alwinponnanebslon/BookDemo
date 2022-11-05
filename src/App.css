@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap");
 body {
   overflow: hidden;
 }
@@ -30,12 +31,16 @@ body {
 .page .page-content .page-text {
   height: 100%;
   flex-grow: 1;
-  font-size: 80%;
+  font-size: 25px;
+  font-weight: 700;
   text-align: justify;
   margin-top: 10px;
   padding-top: 10px;
   box-sizing: border-box;
   border-top: 1px solid #f4e8d7;
+}
+.page .page-content .page-text p {
+  margin: 0 0 10px;
 }
 
 .page .page-content {
@@ -45,6 +50,7 @@ body {
   flex-direction: column;
   justify-content: space-between;
   align-items: stretch;
+  font-family: "Caveat", cursive !important;
 }
 
 .flip-book {
