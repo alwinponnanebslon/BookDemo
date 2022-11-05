@@ -1,13 +1,7 @@
-import React, { useCallback, useEffect, useState } from 'react'
-import HTMLFlipBook from "react-pageflip";
-import A from "../assets/images/a.jpg"
-import styles from "./Book.module.css"
-import Icon from 'react-web-vector-icons';
-// import Speech from 'react-speech';
-// import { SayButton } from 'react-say';
-import Play from '../assets/images/play.png'
-import Stop from '../assets/images/stop.png'
+import React, { useEffect, useState } from 'react';
+import styles from "./Book.module.css";
 import { useSpeechSynthesis } from 'react-speech-kit';
+import Play from '../assets/images/play.png';
 export default function Book() {
     const [height, setHeight] = useState(0);
     const [width, setWidth] = useState(0);
